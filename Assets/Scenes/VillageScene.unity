@@ -243,6 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   moveSpeed: 0
+  corner1: {fileID: 1577683601}
+  corner2: {fileID: 1746057792}
   xInput: 0
   zInput: 0
 --- !u!1 &330585543
