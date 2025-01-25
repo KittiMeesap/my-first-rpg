@@ -13,6 +13,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float xInput;
     [SerializeField] private float zInput;
 
+    [Header("Zoom")]
+    [SerializeField] private float zoomModifier;
+
     public static CameraController instance;
 
     private void Awake()
@@ -29,6 +32,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         MoveByKB();
+        Zoom();
     }
 
     private void MoveByKB()
@@ -49,4 +53,17 @@ public class CameraController : MonoBehaviour
             Mathf.Clamp(transform.position.z, lowerleft.z, topRight.z));
         return pos;
     }
+
+    private void Zoom()
+    {
+        zoomModifier = Input.GetAxis("Mouse ScrollWheel");
+        if (Input.GetKey(KeyCode.Z))
+            zoomModifier = -0.1f;
+        if (Input.GetKey(KeyCode.X))
+            zoomModifier = 0.1f;
+
+        cam.orthographicSize += zoomModifier;
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 4, 10);
+    }
+
 }
