@@ -73,9 +73,9 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
         if (Input.mousePosition.x <= 0f)
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.World);
-        if (Input.mousePosition.z >= Screen.height)
+        if (Input.mousePosition.y >= Screen.height)
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
-        if (Input.mousePosition.z <= 0f)
+        if (Input.mousePosition.y <= 0f)
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime, Space.World);
     }
 
