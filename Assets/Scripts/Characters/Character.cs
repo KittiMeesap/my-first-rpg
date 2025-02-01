@@ -10,7 +10,7 @@ public enum CharState
     Die
 }
 
-public abstract class Characters : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     protected NavMeshAgent navAgent;
 
