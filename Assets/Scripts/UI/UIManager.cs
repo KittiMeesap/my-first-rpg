@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleAI(bool isOn)
     {
-        foreach (Character member in PartyManager.instacnce.Members)
+        foreach (Character member in PartyManager.instance.Members)
         {
             AttackAI ai = member.gameObject.GetComponent<AttackAI>();
 
@@ -44,12 +44,12 @@ public class UIManager : MonoBehaviour
 
     public void SelectAll()
     {
-        foreach (Character member in PartyManager.instacnce.Members)
+        foreach (Character member in PartyManager.instance.Members)
         {
             if (member.CurHP > 0)
             {
                 member.ToggleRingSelection(true);
-                PartyManager.instacnce.SelectChar.Add(member);
+                PartyManager.instance.SelectChar.Add(member);
             }
         }
     }

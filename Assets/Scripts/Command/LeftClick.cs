@@ -42,6 +42,10 @@ public class LeftClick : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             UpdateSelectionBox(Input.mousePosition);
         }
 
@@ -57,7 +61,7 @@ public class LeftClick : MonoBehaviour
         Character hero = hit.collider.GetComponent<Character>();
         Debug.Log("Selected Char: " + hit.collider.gameObject);
 
-        PartyManager.instacnce.SelectChar.Add(hero);
+        PartyManager.instance.SelectChar.Add(hero);
         hero.ToggleRingSelection(true);
         
     }
@@ -81,14 +85,14 @@ public class LeftClick : MonoBehaviour
 
     private void ClearRingSelection()
     {
-        foreach (Character h in PartyManager.instacnce.SelectChar)
+        foreach (Character h in PartyManager.instance.SelectChar)
             h.ToggleRingSelection(false);
     }
 
     private void ClearEveryThing()
     {
         ClearRingSelection();
-        PartyManager.instacnce.SelectChar.Clear();
+        PartyManager.instance.SelectChar.Clear();
     }
 
     private void UpdateSelectionBox(Vector3 mousePos)
@@ -119,13 +123,13 @@ public class LeftClick : MonoBehaviour
         corner1 = oldAnchoredPos - (boxSelection.sizeDelta / 2);
         corner2 = oldAnchoredPos + (boxSelection.sizeDelta / 2);
 
-        foreach (Character member in PartyManager.instacnce.Members)
+        foreach (Character member in PartyManager.instance.Members)
         {
             Vector2 unitPos = cam.WorldToScreenPoint(member.transform.position);
 
             if ((unitPos.x > corner1.x && unitPos.x < corner2.x) && (unitPos.y > corner1.y && unitPos.y < corner2.y))
             {
-                PartyManager.instacnce.SelectChar.Add(member);
+                PartyManager.instance.SelectChar.Add(member);
                 member.ToggleRingSelection(true);
             }
 
