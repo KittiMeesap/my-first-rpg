@@ -201,6 +201,11 @@ MonoBehaviour:
   magicVFX:
   - {fileID: 1722081097931586, guid: c8a4d15c9f73dda4eaeb30a15c4a94b4, type: 3}
   - {fileID: 1236643204216662, guid: c2b7d960c1024e0418d53a9641910d54, type: 3}
+  - {fileID: 1352952055292810, guid: 9e8297bd62223344caff9ae26315d37d, type: 3}
+  - {fileID: 1188071699679046, guid: 0062fe92995827d4b8605905adefcbce, type: 3}
+  - {fileID: 1251993928265596, guid: d60b62367fb9f1a4fa6901cd5fab5b93, type: 3}
+  - {fileID: 1879769179923522, guid: 9ccc8dd2ffd651e4c8e01a3258a8eaf4, type: 3}
+  - {fileID: 1728184095918548, guid: 8d46672785e29cb4bb74a6fa8d17f7d9, type: 3}
 --- !u!114 &9127985
 MonoBehaviour:
   m_ObjectHideFlags: 0

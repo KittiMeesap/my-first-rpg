@@ -283,8 +283,8 @@ public abstract class Character : MonoBehaviour
     private IEnumerator LoadMagicCast(Magic curMagicCast)
     {
         if (vfxManager != null)
-            vfxManager.LoadMagic(curMagicCast.LoadID, 
-                transform.position, curMagicCast.LoadTime);
+            vfxManager.LoadMagic(curMagicCast.LoadID,
+                    transform.position, curMagicCast.LoadTime);
 
         yield return new WaitForSeconds(curMagicCast.LoadTime);
 

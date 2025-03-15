@@ -28,8 +28,14 @@ public class PartyManager : MonoBehaviour
 
         SelectSingleHero(0);
 
-        members[0].MagicSkills.Add(new Magic(0, "Power Glow", 10f, 20, 3f, 1f, 1, 2));
-        members[1].MagicSkills.Add(new Magic(0, "Fire Ball", 10f, 35, 3f, 4f, 0, 1));
+        members[0].MagicSkills.Add(new Magic(0, "Power Glow", 10f, 20, 3f, 1f, 1, 1));
+        members[0].MagicSkills.Add(new Magic(0, "Orbital Strike", 10f, 50, 3f, 1f, 0, 2));
+        members[0].MagicSkills.Add(new Magic(0, "Orbital Missile", 10f, 50, 3f, 1f, 0, 5));
+
+
+        members[1].MagicSkills.Add(new Magic(1, "Fire Ball", 10f, 35, 3f, 4f, 0, 0));
+        members[1].MagicSkills.Add(new Magic(1, "Blizzard Force", 10f, 30, 3f, 1f, 1, 3));
+        members[1].MagicSkills.Add(new Magic(1, "Thunder Roar", 10f, 50, 3f, 1f, 1, 4));
 
         UIManager.instance.ShowMagicToggles();
     }
