@@ -18,6 +18,18 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private int curToggleMagicID = -1;
 
+    [SerializeField]
+    private GameObject blackImage;
+
+    [SerializeField]
+    private GameObject inventoryPanel;
+
+    [SerializeField]
+    private GameObject itemUIPrefab;
+
+    [SerializeField]
+    private GameObject[] slots;
+
     public static UIManager instance;
 
     private void Awake()
@@ -91,6 +103,44 @@ public class UIManager : MonoBehaviour
     public void IsOnCurToggleMagic(bool flag)
     {
         toggleMagic[curToggleMagicID].isOn = flag;
+    }
+
+    public void ToggleInventoryPanel()
+    {
+        if (!inventoryPanel.activeInHierarchy)
+        {
+            inventoryPanel.SetActive(true);
+            blackImage.SetActive(true);
+            ShowInventory();
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+            blackImage.SetActive(false);
+        }
+    }
+
+    public void ShowInventory()
+    {
+        if (PartyManager.instance.SelectChar.Count <= 0)
+            return;
+
+        Character hero = PartyManager.instance.SelectChar[0];
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount > 0)
+            {
+                Transform child = slots[i].transform.GetChild(0);
+                Destroy(child.gameObject);
+            }
+        }
+
+        for (int i= 0; i < hero.InventoryItem.Count; i++)
+        {
+            GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
+            itemObj.GetComponent<Image>().sprite = hero.InventoryItem[i].Icon;
+        }
     }
 
 }
