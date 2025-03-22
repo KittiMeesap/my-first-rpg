@@ -209,6 +209,10 @@ MonoBehaviour:
   magicData:
   - {fileID: 11400000, guid: d6de8a64381f8b6438355b5005827e5d, type: 2}
   - {fileID: 11400000, guid: 8c1877b2d9ed4e645b37408a7bbd1d03, type: 2}
+  - {fileID: 11400000, guid: dcc97c9fbdae8bc40ad3bdda1c7b6f8a, type: 2}
+  - {fileID: 11400000, guid: 9430be259b1247e4b9921363f8641a7c, type: 2}
+  - {fileID: 11400000, guid: 1f6efd1531289d6419be51ff7178e287, type: 2}
+  - {fileID: 11400000, guid: f25be4894b20dc94dbb7836d77989e02, type: 2}
 --- !u!114 &9127985
 MonoBehaviour:
   m_ObjectHideFlags: 0
