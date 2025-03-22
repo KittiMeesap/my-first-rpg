@@ -199,13 +199,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doubleRingMaker: {fileID: 6044037666520248651, guid: 89d7096bd6df6dd4eb11b01186169ec8, type: 3}
   magicVFX:
-  - {fileID: 1722081097931586, guid: c8a4d15c9f73dda4eaeb30a15c4a94b4, type: 3}
   - {fileID: 1236643204216662, guid: c2b7d960c1024e0418d53a9641910d54, type: 3}
+  - {fileID: 1722081097931586, guid: c8a4d15c9f73dda4eaeb30a15c4a94b4, type: 3}
   - {fileID: 1352952055292810, guid: 9e8297bd62223344caff9ae26315d37d, type: 3}
   - {fileID: 1188071699679046, guid: 0062fe92995827d4b8605905adefcbce, type: 3}
   - {fileID: 1251993928265596, guid: d60b62367fb9f1a4fa6901cd5fab5b93, type: 3}
   - {fileID: 1879769179923522, guid: 9ccc8dd2ffd651e4c8e01a3258a8eaf4, type: 3}
   - {fileID: 1728184095918548, guid: 8d46672785e29cb4bb74a6fa8d17f7d9, type: 3}
+  magicData:
+  - {fileID: 11400000, guid: d6de8a64381f8b6438355b5005827e5d, type: 2}
+  - {fileID: 11400000, guid: 8c1877b2d9ed4e645b37408a7bbd1d03, type: 2}
 --- !u!114 &9127985
 MonoBehaviour:
   m_ObjectHideFlags: 0
