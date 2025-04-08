@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a599d8bfa39ecf1439432a222a57b128, type: 3}
-  m_Name: 006_KingCrown
+  m_Name: 003_ShieldB
   m_EditorClassIdentifier: 
-  id: 6
-  itemName: King Crown
-  type: 6
-  icon: {fileID: 21300000, guid: 8833584fb152af141a461105fff3a8d4, type: 3}
-  power: 0
-  prefabID: 0
+  id: 3
+  itemName: Shield A
+  type: 2
+  icon: {fileID: 21300000, guid: 603e1ae48e11fa04bb04e50f2ba06032, type: 3}
+  power: 6
+  prefabID: 3

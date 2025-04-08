@@ -88,3 +88,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff50986eceb7644d8a245fb225f67f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    id: 0
+    itemName: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+  iconParent: {fileID: 0}
+  image: {fileID: 4176620648326752214}

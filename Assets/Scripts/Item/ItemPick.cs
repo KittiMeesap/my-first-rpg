@@ -25,7 +25,7 @@ public class ItemPick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Picl Up");
+        Debug.Log("Pick Up");
 
         if (partyManager.SelectChar.Count > 0)
             PickUpItem(partyManager.SelectChar[0]);

@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class InventoryManager : MonoBehaviour
     public ItemData[] ItemData
     { get { return itemData; } set { itemData = value; } }
 
-    public const int MAXSLOT = 16;
+    public const int MAXSLOT = 17;
 
     public static InventoryManager instance;
 
@@ -44,6 +45,18 @@ public class InventoryManager : MonoBehaviour
             return;
 
         PartyManager.instance.SelectChar[0].InventoryItems[index] = item;
+
+        switch(index)
+        {
+
+            case 15:
+                PartyManager.instance.SelectChar[0].EquipWeapon(item);
+                break;
+
+            case 16:
+                PartyManager.instance.SelectChar[0].EquipShield(item);
+                break;
+        }
     }
 
     public void RemoveItemInBag(int index)
@@ -52,9 +65,21 @@ public class InventoryManager : MonoBehaviour
             return;
 
         PartyManager.instance.SelectChar[0].InventoryItems[index] = null;
+
+        switch (index)
+        {
+
+            case 15:
+                PartyManager.instance.SelectChar[0].UnequipWeapons();
+                break;
+
+            case 16:
+                PartyManager.instance.SelectChar[0].UnequipShield();
+                break;
+        }
     }
 
-    private void SpawmDropItem(Item item, Vector3 pos)
+    private void SpawnDropItem(Item item, Vector3 pos)
     {
         int id;
 
@@ -80,7 +105,19 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] != null)
-                SpawmDropItem(items[i],pos);
+                SpawnDropItem(items[i],pos);
+        }
+    }
+
+    public void DrinkConsumableItem(Item item, int slotId)
+    {
+        string s = string.Format("Drink: {0}", item.ItemName);
+        Debug.Log(s);
+
+        if (PartyManager.instance.SelectChar.Count > 0)
+        {
+            PartyManager.instance.SelectChar[0].Recover(item.Power);
+            RemoveItemInBag(slotId);
         }
     }
 
