@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     public ItemData[] ItemData
     { get { return itemData; } set { itemData = value; } }
 
-    private const int MAXSLOT = 16;
+    public const int MAXSLOT = 16;
 
     public static InventoryManager instance;
 
@@ -21,31 +22,66 @@ public class InventoryManager : MonoBehaviour
         instance = this;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool AddItem(Character character, int id)
     {
         Item item = new Item(itemData[id]);
 
-        if (character.InventoryItem.Count < MAXSLOT)
+        for (int i = 0; i < character.InventoryItems.Length; i++)
         {
-            character.InventoryItem.Add(item);
-            return true;
+            if (character.InventoryItems[i] == null)
+            {
+                character.InventoryItems[i] = item;
+                return true;
+            }
         }
-        else
+        Debug.Log("Inventory Full");
+        return false;
+    }
+
+    public void SaveItemInBag(int index, Item item)
+    {
+        if (PartyManager.instance.SelectChar.Count == 0)
+            return;
+
+        PartyManager.instance.SelectChar[0].InventoryItems[index] = item;
+    }
+
+    public void RemoveItemInBag(int index)
+    {
+        if (PartyManager.instance.SelectChar.Count == 0)
+            return;
+
+        PartyManager.instance.SelectChar[0].InventoryItems[index] = null;
+    }
+
+    private void SpawmDropItem(Item item, Vector3 pos)
+    {
+        int id;
+
+        switch(item.Type)
         {
-            Debug.Log("Inventory Full");
-            return false;
+            case ItemType.Consumable:
+                id = 1;
+                break;
+
+            default:
+                id = 0;
+                break;
+        }
+        GameObject itemObj = Instantiate(ItemPrefabs[id], pos, Quaternion.identity);
+        itemObj.AddComponent<ItemPick>();
+
+        ItemPick itemPick = itemObj.GetComponent<ItemPick>();
+        itemPick.Init(item , instance, PartyManager.instance);
+    }
+
+    public void SpawnDropInventory(Item[] items, Vector3 pos)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] != null)
+                SpawmDropItem(items[i],pos);
         }
     }
+
 }

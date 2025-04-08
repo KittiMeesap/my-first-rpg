@@ -72,9 +72,9 @@ public abstract class Character : MonoBehaviour
     [Header("Inventory")]
 
     [SerializeField]
-    protected List<Item> inventoryItem;
-    public List<Item> InventoryItem
-    { get { return inventoryItem; } set { inventoryItem = value; } }
+    protected Item[] inventoryItems;
+    public Item[] InventoryItems
+    { get { return inventoryItems; } set { inventoryItems = value; } }
 
     [SerializeField]
     protected Item mainWeapon;
@@ -86,6 +86,7 @@ public abstract class Character : MonoBehaviour
 
     protected VFXManager vfxManager;
     protected UIManager uiManager;
+    protected InventoryManager invManager;
 
     void Awake()
     {
@@ -216,6 +217,8 @@ public abstract class Character : MonoBehaviour
 
         anim.SetTrigger("Die");
 
+        invManager.SpawnDropInventory(inventoryItems, transform.position);
+
         StartCoroutine(DestroyObject());
     }
 
@@ -259,10 +262,13 @@ public abstract class Character : MonoBehaviour
         ringSelection.SetActive(flag);
     }
 
-    public void charInit(VFXManager vfxM, UIManager uiM)
+    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
+        invManager = invM;
+
+        inventoryItems = new Item[InventoryManager.MAXSLOT]; 
     }
 
     protected void MagicCastLogic(Magic magic)

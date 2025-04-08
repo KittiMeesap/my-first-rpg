@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        InitSlots();
     }
 
     // Update is called once per frame
@@ -117,6 +117,19 @@ public class UIManager : MonoBehaviour
         {
             inventoryPanel.SetActive(false);
             blackImage.SetActive(false);
+            ClearInventory();
+        }
+    }
+
+    public void ClearInventory()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount > 0)
+            {
+                Transform child = slots[i].transform.GetChild(0);
+                Destroy(child.gameObject);
+            }
         }
     }
 
@@ -127,19 +140,25 @@ public class UIManager : MonoBehaviour
 
         Character hero = PartyManager.instance.SelectChar[0];
 
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < InventoryManager.MAXSLOT; i++)
         {
-            if (slots[i].transform.childCount > 0)
+            if (hero.InventoryItems[i] != null )
             {
-                Transform child = slots[i].transform.GetChild(0);
-                Destroy(child.gameObject);
+                GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
+                ItemDrag itemDrag = itemObj.GetComponent<ItemDrag>();
+
+                itemDrag.Item = hero.InventoryItems[i];
+                itemDrag.IconParent = slots[i].transform;
+                itemDrag.Image.sprite = hero.InventoryItems[i].Icon;
             }
         }
+    }
 
-        for (int i= 0; i < hero.InventoryItem.Count; i++)
+    private void InitSlots()
+    {
+        for (int i = 0; i < InventoryManager.MAXSLOT; i++)
         {
-            GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
-            itemObj.GetComponent<Image>().sprite = hero.InventoryItem[i].Icon;
+            slots[i].GetComponent<InventorySlot>().ID = i;
         }
     }
 
