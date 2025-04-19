@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 004_SwordB
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Sword A
+  itemName: Sword B
   type: 4
-  icon: {fileID: 21300000, guid: aba504aac689d6641a1a6147899c6094, type: 3}
+  icon: {fileID: 21300000, guid: 516b15f82fe762b4e93930cf78a231e7, type: 3}
   power: 30
   prefabID: 5

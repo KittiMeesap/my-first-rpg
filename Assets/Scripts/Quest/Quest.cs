@@ -22,8 +22,8 @@ public class Quest
     public int QuestId { get { return questId; } }
 
     [SerializeField]
-    private QuestType questType;
-    public QuestType QuestType { get { return questType; } }
+    private QuestType type;
+    public QuestType Type { get { return type; } }
 
     [SerializeField]
     private QuestStatus status;
@@ -50,12 +50,12 @@ public class Quest
     public string[] AnswerNext { get { return answerNext; } }
 
     [SerializeField]
-    private string[] answerAccept;
-    public string[] AnswerAccept { get { return answerAccept; } }
+    private string answerAccept;
+    public string AnswerAccept { get { return answerAccept; } }
 
     [SerializeField]
-    private string[] answerReject;
-    public string[] AnswerReject { get { return answerReject; } }
+    private string answerReject;
+    public string AnswerReject { get { return answerReject; } }
 
     [SerializeField]
     private int rewardItemId;

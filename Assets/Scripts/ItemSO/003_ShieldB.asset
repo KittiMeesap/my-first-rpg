@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 003_ShieldB
   m_EditorClassIdentifier: 
   id: 3
-  itemName: Shield A
+  itemName: Shield B
   type: 2
-  icon: {fileID: 21300000, guid: 603e1ae48e11fa04bb04e50f2ba06032, type: 3}
+  icon: {fileID: 21300000, guid: 5919bbcd8685d484dbb40d0732a53117, type: 3}
   power: 6
   prefabID: 3

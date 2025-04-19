@@ -11,6 +11,10 @@ public class PartyManager : MonoBehaviour
     private List<Character> selectChar = new List<Character>();
     public List<Character> SelectChar { get { return selectChar; } }
 
+    [SerializeField]
+    private List<Quest> questList = new List<Quest>();
+    public List<Quest> QuestList { get { return questList; } }
+
     public static PartyManager instance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -84,4 +88,5 @@ public class PartyManager : MonoBehaviour
         selectChar[0].IsMagicMode = true;
         SelectChar[0].CurMagicCast = selectChar[0].MagicSkills[i];
     }
+
 }

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2fb7f933edd87e48a80252f571c2890, type: 3}
-  m_Name: 00_GetMePotion
+  m_Name: 01_ThisIsMagic
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 1
   questType: 0
   status: 0
-  questName: Get Me a Potion
-  questDetail: Give Ben a bottle of blue health potion.
-  questItemId: 0
+  questName: Get Me a Magic Potion
+  questDetail: Give Ben a Magic potion.
+  questItemId: 5
   questDialogue:
   - Hello, adventures. How are you?
   - Can I ask you something?
-  - I need a blue health potion. Cloud you give me one?
+  - I need a Magic potion. Cloud you give me one?
   answerNext:
   - Hi, nice to meet you.
   - Go ahead, I'n listening.
@@ -29,6 +29,6 @@ MonoBehaviour:
   answerReject: Sorry, I cloudn't help you.
   rewardItemId: 4
   rewardExp: 150
-  questionInProgress: Have you gotten any blue potion?
+  questionInProgress: Have you gotten any Magic potion?
   answerFinish: Here it is.
   answerNotFinish: Not yet, please wait.
