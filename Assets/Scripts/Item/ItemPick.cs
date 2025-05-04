@@ -27,8 +27,8 @@ public class ItemPick : MonoBehaviour
     {
         Debug.Log("Pick Up");
 
-        if (partyManager.SelectChar.Count > 0)
-            PickUpItem(partyManager.SelectChar[0]);
+        if (partyManager.SelectChars.Count > 0)
+            PickUpItem(partyManager.SelectChars[0]);
     }
 
 }

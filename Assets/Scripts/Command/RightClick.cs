@@ -47,15 +47,15 @@ public class RightClick : MonoBehaviour
             switch (hit.collider.tag)
             {
                 case "Ground":
-                    CommandToWalk(hit, PartyManager.instance.SelectChar);
+                    CommandToWalk(hit, PartyManager.instance.SelectChars);
                     break;
 
                 case "Enemy":
-                    CommandToAttack(hit, PartyManager.instance.SelectChar);
+                    CommandToAttack(hit, PartyManager.instance.SelectChars);
                     break;
 
                 case "NPC":
-                    CommandTakToNPC(hit, PartyManager.instance.SelectChar);
+                    CommandTakToNPC(hit, PartyManager.instance.SelectChars);
                     break;
             }
         }

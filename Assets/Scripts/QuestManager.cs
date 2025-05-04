@@ -4,7 +4,7 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField]
     private Npc[] npcPerson;
-    public Npc[] NpcPerson { get { return npcPerson; } set { npcPerson = value; } }
+    public Npc[] NPCPerson { get { return npcPerson; } set { npcPerson = value; } }
 
     [SerializeField]
     private QuestData[] questData;
@@ -101,10 +101,10 @@ public class QuestManager : MonoBehaviour
 
     public bool NpcGiveReward()
     {
-        if (PartyManager.instance.SelectChar.Count == 0)
+        if (PartyManager.instance.SelectChars.Count == 0)
             return false;
 
-        Character hero = PartyManager.instance.SelectChar[0];
+        Character hero = PartyManager.instance.SelectChars[0];
 
         Item item = new Item(InventoryManager.instance.ItemData[curQuest.RewardItemId]);
 

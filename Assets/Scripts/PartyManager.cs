@@ -8,12 +8,16 @@ public class PartyManager : MonoBehaviour
     public List<Character> Members { get { return members; } }
 
     [SerializeField]
-    private List<Character> selectChar = new List<Character>();
-    public List<Character> SelectChar { get { return selectChar; } }
+    private List<Character> selectChars = new List<Character>();
+    public List<Character> SelectChars { get { return selectChars; } }
 
     [SerializeField]
     private List<Quest> questList = new List<Quest>();
     public List<Quest> QuestList { get { return questList; } }
+
+    [SerializeField]
+    private int partyMoney = 1000;
+    public int PartyMoney { get { return partyMoney; } set { partyMoney = value; } }
 
     public static PartyManager instance;
 
@@ -61,32 +65,32 @@ public class PartyManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if (selectChar.Count > 0)
+            if (selectChars.Count > 0)
             {
-                selectChar[0].IsMagicMode = true;
-                selectChar[0].CurMagicCast = selectChar[0].MagicSkills[0];
+                selectChars[0].IsMagicMode = true;
+                selectChars[0].CurMagicCast = selectChars[0].MagicSkills[0];
             }
         }
     }
 
     public void SelectSingleHero(int i)
     {
-        foreach (Character c in selectChar)
+        foreach (Character c in selectChars)
             c.ToggleRingSelection(false);
 
-        selectChar.Clear();
+        selectChars.Clear();
 
-        selectChar.Add(members[i]);
-        selectChar[0].ToggleRingSelection(true);
+        selectChars.Add(members[i]);
+        selectChars[0].ToggleRingSelection(true);
     }
 
     public void HeroSelectMagicSkills(int i)
     {
-        if (selectChar.Count <= 0)
+        if (selectChars.Count <= 0)
             return;
 
-        selectChar[0].IsMagicMode = true;
-        SelectChar[0].CurMagicCast = selectChar[0].MagicSkills[i];
+        selectChars[0].IsMagicMode = true;
+        SelectChars[0].CurMagicCast = selectChars[0].MagicSkills[i];
     }
 
     public int FindIndexFromClass(Character hero)
@@ -101,14 +105,14 @@ public class PartyManager : MonoBehaviour
 
     public void SelectingSingleHeroByToggle(int i)
     {
-        if (selectChar.Contains(members[i]))
+        if (selectChars.Contains(members[i]))
         {
             members[i].ToggleRingSelection(true);
             UIManager.instance.ShowMagicToggles();
         }
         else
         {
-            selectChar.Add(members[i]);
+            selectChars.Add(members[i]);
             members[i].ToggleRingSelection(true);
             UIManager.instance.ShowMagicToggles();
         }
@@ -116,15 +120,15 @@ public class PartyManager : MonoBehaviour
 
     public void UnSelectSingleHeroByToggle(int i)
     {
-        if (selectChar.Count <= 1)
+        /*if (selectChar.Count <= 1)
         {
             UIManager.instance.ToggleAvatar[i].isOn = true;
             return;
-        }
+        }*/
 
-        if (selectChar.Contains(members[i]))
+        if (selectChars.Contains(members[i]))
         {
-            selectChar.Remove(members[i]);
+            selectChars.Remove(members[i]);
             members[i].ToggleRingSelection(false);
         }
     }
@@ -134,8 +138,8 @@ public class PartyManager : MonoBehaviour
         if (id == -1 || id == 0)
             return;
 
-        if (selectChar.Contains(members[id]))
-            selectChar.Remove(members[id]);
+        if (selectChars.Contains(members[id]))
+            selectChars.Remove(members[id]);
 
         members.Remove(members[id]);
     }

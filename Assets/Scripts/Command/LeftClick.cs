@@ -37,13 +37,15 @@ public class LeftClick : MonoBehaviour
 
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
+
+            ClearEveryThing();
         }
 
         if (Input.GetMouseButton(0))
         {
 
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            /*if (EventSystem.current.IsPointerOverGameObject())
+                return;*/
 
             UpdateSelectionBox(Input.mousePosition);
         }
@@ -55,7 +57,7 @@ public class LeftClick : MonoBehaviour
         }
     }
 
-    private void SelectCharacter(RaycastHit hit)
+    private int SelectCharacter(RaycastHit hit)
     {
         ClearEveryThing();
         Character hero = hit.collider.GetComponent<Character>();
@@ -63,6 +65,7 @@ public class LeftClick : MonoBehaviour
 
         int i = PartyManager.instance.FindIndexFromClass(hero);
         UIManager.instance.ToggleAvatar[i].isOn = true;
+        return i;
 
     }
 
@@ -71,21 +74,26 @@ public class LeftClick : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(screenPos);
         RaycastHit hit;
 
+        int i = 0;
+
         if (Physics.Raycast(ray, out hit, 1000, layerMask))
         {
             switch (hit.collider.tag)
             {
                 case "Player":
                 case "Hero":
-                    SelectCharacter(hit);
+                    i = SelectCharacter(hit);
                     break;
             }
         }
+
+        if (PartyManager.instance.SelectChars.Count == 0)
+            UIManager.instance.ToggleAvatar[i].isOn = true;
     }
 
     private void ClearRingSelection()
     {
-        foreach (Character h in PartyManager.instance.SelectChar)
+        foreach (Character h in PartyManager.instance.SelectChars)
             h.ToggleRingSelection(false);
     }
 
@@ -95,7 +103,7 @@ public class LeftClick : MonoBehaviour
             t.isOn = false;
 
         ClearRingSelection();
-        PartyManager.instance.SelectChar.Clear();
+        PartyManager.instance.SelectChars.Clear();
     }
 
     private void UpdateSelectionBox(Vector3 mousePos)
@@ -132,8 +140,9 @@ public class LeftClick : MonoBehaviour
 
             if ((unitPos.x > corner1.x && unitPos.x < corner2.x) && (unitPos.y > corner1.y && unitPos.y < corner2.y))
             {
-                PartyManager.instance.SelectChar.Add(member);
-                member.ToggleRingSelection(true);
+                int i = PartyManager.instance.FindIndexFromClass(member);
+
+                UIManager.instance.ToggleAvatar[i].isOn = true;
             }
 
         }

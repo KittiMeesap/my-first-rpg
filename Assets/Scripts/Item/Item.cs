@@ -40,6 +40,10 @@ public class Item
     public int PrefabID
     { get { return prefabID; } }
 
+    [SerializeField]
+    private int normalPrice;
+    public int NormalPrice { get { return normalPrice; } }
+
     public Item(ItemData data)
     {
         id = data.id;
@@ -48,5 +52,6 @@ public class Item
         icon = data.icon;
         power = data.power;
         prefabID = data.prefabID;
+        normalPrice = data.normalPrice;
     }
 }

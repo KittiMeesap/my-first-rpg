@@ -18,3 +18,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: aba504aac689d6641a1a6147899c6094, type: 3}
   power: 20
   prefabID: 4
+  normalPrice: 100

@@ -22,6 +22,22 @@ public class InventoryManager : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        AddItemShopToNPC(1, 0); 
+        AddItemShopToNPC(1, 1); 
+        AddItemShopToNPC(1, 2); 
+        AddItemShopToNPC(1, 3);
+        AddItemShopToNPC(1, 4);
+        AddItemShopToNPC(1, 5);
+        AddItemShopToNPC(1, 6);
+        AddItemShopToNPC(1, 7);
+        AddItemShopToNPC(1, 8);
+        AddItemShopToNPC(1, 9);
+        AddItemShopToNPC(1, 10);
+    }
+
+
     public bool AddItem(Character character, int id)
     {
         Item item = new Item(itemData[id]);
@@ -40,40 +56,40 @@ public class InventoryManager : MonoBehaviour
 
     public void SaveItemInBag(int index, Item item)
     {
-        if (PartyManager.instance.SelectChar.Count == 0)
+        if (PartyManager.instance.SelectChars.Count == 0)
             return;
 
-        PartyManager.instance.SelectChar[0].InventoryItems[index] = item;
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
 
         switch(index)
         {
 
             case 15:
-                PartyManager.instance.SelectChar[0].EquipWeapon(item);
+                PartyManager.instance.SelectChars[0].EquipWeapon(item);
                 break;
 
             case 16:
-                PartyManager.instance.SelectChar[0].EquipShield(item);
+                PartyManager.instance.SelectChars[0].EquipShield(item);
                 break;
         }
     }
 
     public void RemoveItemInBag(int index)
     {
-        if (PartyManager.instance.SelectChar.Count == 0)
+        if (PartyManager.instance.SelectChars.Count == 0)
             return;
 
-        PartyManager.instance.SelectChar[0].InventoryItems[index] = null;
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
 
         switch (index)
         {
 
             case 15:
-                PartyManager.instance.SelectChar[0].UnequipWeapons();
+                PartyManager.instance.SelectChars[0].UnequipWeapons();
                 break;
 
             case 16:
-                PartyManager.instance.SelectChar[0].UnequipShield();
+                PartyManager.instance.SelectChars[0].UnequipShield();
                 break;
         }
     }
@@ -113,9 +129,9 @@ public class InventoryManager : MonoBehaviour
         string s = string.Format("Drink: {0}", item.ItemName);
         Debug.Log(s);
 
-        if (PartyManager.instance.SelectChar.Count > 0)
+        if (PartyManager.instance.SelectChars.Count > 0)
         {
-            PartyManager.instance.SelectChar[0].Recover(item.Power);
+            PartyManager.instance.SelectChars[0].Recover(item.Power);
             RemoveItemInBag(slotId);
         }
     }
@@ -125,7 +141,7 @@ public class InventoryManager : MonoBehaviour
         Item item = new Item(itemData[id]);
         Debug.Log(item.ItemName);
 
-        List<Character> party = PartyManager.instance.SelectChar;
+        List<Character> party = PartyManager.instance.SelectChars;
 
         foreach (Character hero in party)
         {
@@ -145,7 +161,7 @@ public class InventoryManager : MonoBehaviour
         Item item = new Item(itemData[id]);
         Debug.Log($"Finding {item.ItemName}");
 
-        List<Character> selectedHero = PartyManager.instance.SelectChar;
+        List<Character> selectedHero = PartyManager.instance.SelectChars;
 
         foreach (Character hero in selectedHero)
         {
@@ -163,4 +179,9 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    private void AddItemShopToNPC(int npcId, int itemId)
+    {
+        Item item = new Item(itemData[itemId]);
+        QuestManager.instance.NPCPerson[npcId].ShopItems.Add(item);
+    }
 }
