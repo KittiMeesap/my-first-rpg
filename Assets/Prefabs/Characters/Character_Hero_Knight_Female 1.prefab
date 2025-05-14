@@ -1317,7 +1317,7 @@ MonoBehaviour:
   charName: 
   state: 0
   ringSelection: {fileID: 3802635209874473155}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -1345,9 +1345,10 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 0}
   weaponObj: {fileID: 0}
-  attackPower: 0
+  attackPower: 3
   shield:
     id: 0
     itemName: 
@@ -1355,17 +1356,19 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 479758}
   shieldObj: {fileID: 0}
   defensePower: 0
   exp: 0
-  level: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  charisma: 0
+  level: 1
+  nextExp: 30
+  strength: 20
+  dexterity: 2
+  constitution: 3
+  intelligence: 1
+  wisdom: 7
+  charisma: 5
 --- !u!114 &3687878601596157670
 MonoBehaviour:
   m_ObjectHideFlags: 0

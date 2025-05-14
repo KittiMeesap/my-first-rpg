@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: -3746062299042626745}
   m_Layer: 6
   m_Name: Character_Goblin_Male 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
   charName: 
   state: 0
   ringSelection: {fileID: 7283924563825323326}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -1011,6 +1011,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 0}
   weaponObj: {fileID: 0}
   attackPower: 0
@@ -1021,9 +1022,11 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 466868}
   shieldObj: {fileID: 0}
   defensePower: 0
+  expDrop: 30
 --- !u!114 &7141477975840722432
 MonoBehaviour:
   m_ObjectHideFlags: 0

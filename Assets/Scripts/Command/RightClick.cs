@@ -55,6 +55,7 @@ public class RightClick : MonoBehaviour
                     break;
 
                 case "NPC":
+                case "Hero":
                     CommandTakToNPC(hit, PartyManager.instance.SelectChars);
                     break;
             }
