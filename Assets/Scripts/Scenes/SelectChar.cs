@@ -62,6 +62,7 @@ public class SelectChar : MonoBehaviour
     public void BeginGame()
     {
         Settings.playerPrefabId = curId;
+        Settings.isNewGame = true;
         SceneManager.LoadScene("VillageScene");
     }
 

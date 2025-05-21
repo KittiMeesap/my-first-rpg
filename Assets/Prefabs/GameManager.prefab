@@ -113,6 +113,13 @@ MonoBehaviour:
   members: []
   selectChars: []
   questList: []
+  heroData:
+  - {fileID: 11400000, guid: 5dffcffd23de9d94187f57299c9b2bfd, type: 2}
+  - {fileID: 11400000, guid: a720850f3e5454d47993b50fdd0a8fe1, type: 2}
+  - {fileID: 11400000, guid: abfbb6888dc0d734a84cfb6875815168, type: 2}
+  - {fileID: 11400000, guid: a9db3dea43922304cb525721b712ebea, type: 2}
+  - {fileID: 11400000, guid: 22e7dd78b5f31464db1133d75b8fdbfb, type: 2}
+  - {fileID: 11400000, guid: ae019614103cc9b45865d148566c4da7, type: 2}
   partyMoney: 1000
   totalExp: 0
 --- !u!114 &619122671606132540
