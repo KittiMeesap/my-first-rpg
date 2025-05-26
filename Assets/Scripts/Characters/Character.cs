@@ -83,6 +83,15 @@ public abstract class Character : MonoBehaviour
     public bool IsMagicMode
     { get { return isMagicMode; } set { isMagicMode = value; } }
 
+    [SerializeField]
+    protected int curMana = 50;
+    public int CurMana { get { return curMana; } set { curMana = value; } }
+
+    [SerializeField]
+    protected int maxMana = 100;
+    public int MaxMana { get { return maxMana; } }
+
+
     [Header("Inventory")]
 
     [SerializeField]
@@ -354,11 +363,29 @@ public abstract class Character : MonoBehaviour
 
     private void MagicCsat(Magic curMagicCast)
     {
+        if (curMana < curMagicCast.ManaCost)
+        {
+            Debug.Log("Not enough Mana!");
+            SetState(CharState.Idle);
+            return;
+        }
+
+        curMana -= curMagicCast.ManaCost;
+
         transform.LookAt(curCharTarget.transform);
         anim.SetTrigger("MagicAttack");
 
         StartCoroutine(LoadMagicCast(curMagicCast));
     }
+
+    public void RecoverMana(int amount)
+    {
+        curMana += amount;
+
+        if (curMana > maxMana)
+            curMana = maxMana;
+    }
+
 
     protected void WalkToMagicCastUpdate()
     {

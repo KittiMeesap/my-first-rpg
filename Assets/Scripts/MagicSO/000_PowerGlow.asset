@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 7be6e21e4cb810241b4d06fe95224106, type: 3}
   range: 10
   power: 20
+  manaCost: 5
   loadTime: 3
   shootTime: 0
   loadId: 1

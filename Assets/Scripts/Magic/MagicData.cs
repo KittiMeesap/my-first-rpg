@@ -8,6 +8,7 @@ public class MagicData : ScriptableObject
     public Sprite icon;
     public float range;
     public int power;
+    public int manaCost;
     public float loadTime;
     public float shootTime;
     public int loadId;

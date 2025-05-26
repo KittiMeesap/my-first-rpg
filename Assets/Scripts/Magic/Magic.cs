@@ -26,6 +26,10 @@ public class Magic
     public int Power { get { return power; } }
 
     [SerializeField]
+    private int manaCost;
+    public int ManaCost { get { return manaCost; } }
+
+    [SerializeField]
     private float loadTime;
     public float LoadTime { get { return loadTime; } }
 
@@ -48,6 +52,7 @@ public class Magic
         icon = data.icon;
         range = data.range;
         power = data.power;
+        manaCost = data.manaCost;
         loadTime = data.loadTime;
         shootTime = data.shootTime;
         loadId = data.loadId;
