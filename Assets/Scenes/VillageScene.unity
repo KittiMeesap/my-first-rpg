@@ -23952,6 +23952,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6502705196397483379, guid: d8672eac62022eb4ca9cc8401734d798, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2833782783284990546}
+    - targetCorrespondingSourceObject: {fileID: 6502705196397483379, guid: d8672eac62022eb4ca9cc8401734d798, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2833782783284990547}
   m_SourcePrefab: {fileID: 100100000, guid: d8672eac62022eb4ca9cc8401734d798, type: 3}
 --- !u!1 &2833782783284990545 stripped
 GameObject:
@@ -23972,6 +23975,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterPoints:
   - {fileID: 2089995971}
+--- !u!114 &2833782783284990547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833782783284990545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c77c567e23fc447985bd76a1be9978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realMinutesPerGameHour: 1
+  sun: {fileID: 410087040}
+  sunColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  sunIntensity:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3473744078881898351
 PrefabInstance:
   m_ObjectHideFlags: 0
