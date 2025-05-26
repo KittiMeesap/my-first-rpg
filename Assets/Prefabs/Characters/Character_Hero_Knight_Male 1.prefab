@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 13783464}
   m_Layer: 0
   m_Name: Character_Hero_Knight_Male
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2966,7 +2966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatarPic: {fileID: 21300000, guid: 1c2305767e76549489b8a9b444d725a0, type: 3}
-  charName: Rasus
+  charName: Player01
   state: 0
   ringSelection: {fileID: 5901099534350722}
   curHP: 100
@@ -2984,11 +2984,14 @@ MonoBehaviour:
     icon: {fileID: 0}
     range: 0
     power: 0
+    manaCost: 0
     loadTime: 0
     shootTime: 0
     loadId: 0
     shootId: 0
   isMagicMode: 0
+  curMana: 50
+  maxMana: 100
   inventoryItems: []
   mainWeapon:
     id: 0
@@ -3012,7 +3015,7 @@ MonoBehaviour:
   shieldHand: {fileID: 483062}
   shieldObj: {fileID: 0}
   defensePower: 0
-  prefabId: 1
+  prefabId: 0
   exp: 0
   level: 1
   nextExp: 30
@@ -3041,7 +3044,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0de2077a0998cc4683598c1de8b93b0, type: 3}
   m_Name: 
@@ -4824,7 +4827,7 @@ GameObject:
   - component: {fileID: 481442}
   m_Layer: 0
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

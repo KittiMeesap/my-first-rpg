@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fb7f933edd87e48a80252f571c2890, type: 3}
+  m_Name: 02_KillThemAll
+  m_EditorClassIdentifier: 
+  questId: 2
+  questType: 1
+  status: 0
+  questName: Kill Goblin
+  questDetail: KIll Goblin For Me
+  questItemId: 0
+  questDialogue:
+  - Hello, adventures. How are you?
+  - Can I ask you something?
+  - I need you kill goblin. Can do it for me?
+  answerNext:
+  - Hi, nice to meet you.
+  - Go ahead, I'n listening.
+  answerAccept: Yes, I shall kill it for you.
+  answerReject: Sorry, I cloudn't help you.
+  rewardItemId: 4
+  rewardExp: 150
+  questionInProgress: Do you kil them all?
+  answerFinish: Yes i do.
+  answerNotFinish: Not yet, please wait.
