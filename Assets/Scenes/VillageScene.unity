@@ -9895,6 +9895,7 @@ GameObject:
   - component: {fileID: 783664099}
   - component: {fileID: 783664098}
   - component: {fileID: 783664097}
+  - component: {fileID: 783664100}
   m_Layer: 5
   m_Name: TopRightPanel
   m_TagString: Untagged
@@ -9991,6 +9992,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783664095}
   m_CullTransparentMesh: 1
+--- !u!114 &783664100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783664095}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1 &784465234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3523150291750715763, guid: aa1de09d309096b4ea82a44d8894875c, type: 3}
@@ -21883,7 +21897,12 @@ MonoBehaviour:
   btnFinishText: {fileID: 328820026}
   btnNotFinish: {fileID: 219700171}
   btnNotFinishText: {fileID: 228716163}
-  toggleAvatar: []
+  toggleAvatar:
+  - {fileID: 380345465}
+  - {fileID: 375828216}
+  - {fileID: 1204643812}
+  - {fileID: 767537273}
+  - {fileID: 372174615}
   charPanel: {fileID: 101417205}
   charNameText: {fileID: 1937319099}
   statText: {fileID: 1113858098}

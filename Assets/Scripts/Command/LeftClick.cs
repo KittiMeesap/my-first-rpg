@@ -38,7 +38,7 @@ public class LeftClick : MonoBehaviour
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            ClearEveryThing();
+            //ClearEveryThing();
         }
 
         if (Input.GetMouseButton(0))
